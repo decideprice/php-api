@@ -1,0 +1,85 @@
+decideprice api javascript documentation
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+1. Edit client_url in api.decideprice.js 
+            eg: client_url = 'http://yourdomain.com'
+
+
+
+2 . For Buy product button function
+   
+     a. add class name "buy-product" to that button
+     b. add attributes 
+             1. shop_id 	= shop id of that product
+             2. merchant_id	= merchant id of that product
+             3. product id 	= product id of that product
+
+     eg:        
+		<button type="button" class=" buy-product" shop_id="your-product-id" merchant_id="your-merchant-id"
+		 product_id="your-product-id">Purchase</button>
+
+
+3. For Add to cart button		 
+
+	 a. add class name "add-to-cart" to that button
+     b. add attributes 
+             1. shop_id 	= shop id of that product
+             2. merchant_id	= merchant id of that product
+             3. product id 	= product id of that product
+
+     eg:
+     	<button type="button" class="add-to-cart" shop_id="your-product-id" merchant_id="your-merchant-id"
+		 product_id="your-product-id">Add To Cart</button>        
+
+4. In Cart Page
+   
+      a. add unit price of each product inside a span tag with class single_price
+         eg:<span class="single_price">unit price without currency symbol </span>
+
+      b. add class "pdt_qty" in product quantity input element
+         eg:
+         	<input name="quantity" value=""  class=" pdt_qty"  shop_id="your-product-id" merchant_id="your-merchant-id"
+		 product_id="your-product-id">
+
+	  c. add a span tag with class "sub_total"  around sub total of each cart element 
+	  	 eg:
+	  	 	<span class="sub_total">sub total price without currency symbol</span> 	
+
+	  d.  removing cart element
+	      
+	      1. add class "cart_product_remove" to the element
+	      2  add attributes 
+             1. shop_id 	= shop id of that product
+             2. merchant_id	= merchant id of that product
+             3. product id 	= product id of that product
+        eg:
+        	<a href="#" title="Remove item" class="cart_product_remove" shop_id="your-product-id" merchant_id="your-merchant-id"
+		 product_id="your-product-id">Remove item</a>     
+      
+      e. continue shopping button
+
+      	  1. add class "continue_shopping" to the button
+      	  2. edit continue_shopping_url in api.decideprice.js
+
+      f. update shopping cart button
+
+          1. add class "update-cart" to that button	 
+
+      g. add a span tag with id "cart_total" around total cat price 
+      
+          eg:
+          	<span class="price" id="cart_total">Total Price</span>   
+
+      h. proceed to checkout button
+      
+          1. add class "check_out" to that button
+          2. add the following form in the cart php page(eg:cart.php)
+
+              <form method="POST" action="http://clearprize.com/proceed_pay_api.php" id="api_payment" style="display:none">
+			     <input type="text" name="cart" id="cart_cookie" value="">
+			     <input type="text" name="cart_count" id="count_cookie" value="">
+			  </form>    	   

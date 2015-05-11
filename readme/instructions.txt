@@ -1,0 +1,75 @@
+Documentation for using decideprice api on third party webpages 
+
+
+steps 
+
+  step 1 : 
+        place decideprice folder inside your main directory 
+
+
+        Directory Structure 
+
+        main directory --
+           your files---
+           decideprce---
+                css---
+                    decideprice_style.css
+                    
+                js--
+                    api.decideprice.js
+                    ohsnap.js
+                    jquery.cookie
+                    sweetalert.min.js
+                    sweetalert-dev.js
+
+                
+                decideprice_theme.php
+                events.php
+                functions.php
+
+  step 2 : 
+          change DP_API_KEY in decideprice_theme.php 
+          paste the provided api key there
+
+
+  step 3 :
+          include decideprice_theme.php in  your php file
+          initiate decideprice class 
+
+          eg:  if (!class_exists('decideprice_theme')){require_once('decideprice/decideprice_theme.php');}
+
+
+          if (!defined('DP_API_KEY')) {define('DP_API_KEY', 'svzq8sXTmtDiIOmNlcC9XwCIG9teu4hUhqPftRsbN/aP3LDRXlvn0Xygo/w+tWJuyFeiQ7P6b9PyMB1WbG15OA==');}
+
+
+  step 4 : 
+          use decideprice api functions to get your datas.
+          available functions are listed below
+
+           eg : for getting logo of your shop use below sample
+
+                    $logo = $decideprice_theme->get('logo/');
+
+
+  step 5 : 
+
+
+          include below css inside  header tag 
+             eg:  <link rel="stylesheet" href="decideprice/css/decideprice_style.css">
+          before the closing the body tag paste the below code 
+
+              <div id="ohsnap"></div>
+              <script src="decideprice/js/ohsnap.js"></script>
+              <script src="decideprice/js/api.decideprice.js"></script> 
+              <script src="decideprice/js/jquery.cookie.js"></script>
+              <script src="decideprice/js/sweetalert.min.js"></script>      
+              (path may be changing according your project structure)
+              we are assuming that jquery is available 
+              if jquery is not included already on your page include jquery also for working of decideprice api
+
+
+
+
+
+
+
