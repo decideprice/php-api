@@ -9,36 +9,31 @@ The following denotes the PHP API for [Decideprice](https://developers.decidepri
 
 ## Requirements ##
 * [PHP 5.2.1 or higher](http://www.php.net/)
-* [PHP JSON extension](http://php.net/manual/en/book.json.php)
-
 
 
 ## Developer Documentation ##
-http://developers.google.com/api-client-library/php
+http://developers.decideprice.com/
 
 ## Installation ##
 
-For the latest installation and setup instructions, see [the documentation](https://developers.google.com/api-client-library/php/start/installation).
+	Copy The Folder decideprice-api-php-theme into the root Directory then please see the how the Authenctication section below.
 
-## Basic Example ##
-See the examples/ directory for examples of the key client features.
+## Authentication And Basic Sample ##
+See the examples/sample1 directory for examples of the key client features.
 ```PHP
 <?php
+	
+	if (!defined('DP_API_KEY')) {define('DP_API_KEY', 'your-unique-api-key');}
 
-  require_once 'google-api-php-client/src/Google/autoload.php'; // or wherever autoload.php is located
-  
-  $client = new Google_Client();
-  $client->setApplicationName("Client_Library_Examples");
-  $client->setDeveloperKey("YOUR_APP_KEY");
-  
-  $service = new Google_Service_Books($client);
-  $optParams = array('filter' => 'free-ebooks');
-  $results = $service->volumes->listVolumes('Henry David Thoreau', $optParams);
+	if (!class_exists('decideprice_theme')){require_once('decideprice/decideprice_theme.php');}
 
-  foreach ($results as $item) {
-    echo $item['volumeInfo']['title'], "<br /> \n";
-  }
+  	$decideprice_theme = new decideprice_theme();
+
+  	$logo = $decideprice_theme->get('logo/');
   
 ```
+
+Change your-unique-api-key with your Api Key that gets from your developer setting in the shop merchant panel
+
 
 

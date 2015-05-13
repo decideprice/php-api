@@ -1,7 +1,7 @@
 <?php
 
-if (!defined('DP_API_KEY')) {define('DP_API_KEY', 'your-unique-api-key');}
-if (!defined('DP_MAIN_URL')) {define('DP_MAIN_URL', 'http://api.clearprize.com/theme/');}
+// Dont Edit the Code below.
+if (!defined('DP_MAIN_URL')) {define('DP_MAIN_URL', 'http://api.decideprice.com/theme/');}
 
 class decideprice_theme{
 
