@@ -779,6 +779,7 @@ body.stop-scrolling {
   color: white;
   background-color: #37BC9B;
 }
+
 .alert-blue {
   min-width: 300px;
   color: white;
@@ -792,7 +793,7 @@ body.stop-scrolling {
 .alert-orange {
   min-width: 300px;
   color:white;
-  background-color: #E9573F;
+  background-color: #FE980F;
 }
 
 #ohsnap{
